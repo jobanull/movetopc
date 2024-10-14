@@ -6,4 +6,7 @@
     </style>
 
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
+    <style name="Theme.SmsReceiver" parent="Base.Theme.MyApplication" />
+
+    <style name="Theme.SmsReceiver.Dialog" parent="Theme.Material3.DayNight.Dialog" />
 </resources>

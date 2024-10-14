@@ -3,5 +3,9 @@
     <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
     </style>
+    <style name="Theme.SmsReceiver" parent="Base.Theme.MyApplication" />
+
+    <style name="Theme.SmsReceiver.Dialog" parent="Theme.Material3.DayNight.Dialog" />
 </resources>

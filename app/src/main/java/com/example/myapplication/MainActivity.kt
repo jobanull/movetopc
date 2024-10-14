@@ -6,7 +6,6 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.fragment.FragmentMainActivity
-import com.example.myapplication.fragment.HomeFragment
 import com.example.myapplication.ldp.LDPMainActivity
 import com.example.myapplication.livedata.LiveDataMainActivity
 import com.example.myapplication.loopj.LoopJMainActivity
