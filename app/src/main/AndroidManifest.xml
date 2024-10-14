@@ -3,6 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -14,17 +23,83 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+        <receiver
+            android:name=".task.alarm.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <activity
+            android:name=".task.backTask.BackTaskDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".task.backTask.BackTaskMainActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
+
+        <receiver
+            android:name=".task.broadcastReceiver.SmsReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".task.broadcastReceiver.SmsReceiverActivity"
+            android:theme="@style/Theme.SmsReceiver.Dialog" />
+        <activity
+            android:name=".task.broadcastReceiver.BroadcastReceiverMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".task.scheduler.SchedulerMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".task.notification.NotificationMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".task.alarm.AlarmMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".testing.TestingMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.room.RoomNoteAddUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.sqlite.NoteAddUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.sharedPreferences.FormUserPreferencesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.sqlite.SqlLiteMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.sharedPreferences.SharedPrefMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.room.RoomMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.repository.ui.RepositoryMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.openFile.OpenFileMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.datastore.DataStoreMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".livedata.withapi.LiveDataApiMainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication" />
         <activity
             android:name=".viewModel.ViewModelMainActivity"
             android:exported="false" />
         <activity
             android:name=".loopj.LoopJListQuoteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".retrofit.RetrofitListQuoteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".testing.TestingMainActivity"
             android:exported="false" />
         <activity
             android:name=".task.TaskMainActivity"
@@ -39,7 +114,7 @@
             android:name=".livedata.LiveDataMainActivity"
             android:exported="false" />
         <activity
-            android:name=".ldp.LDPMainActivity"
+            android:name=".ldp.LdpMainActivity"
             android:exported="false" />
         <activity
             android:name=".navigation.NavigationProfileActivity"
@@ -52,9 +127,6 @@
             android:exported="false" />
         <activity
             android:name=".fragment.FragmentMainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TestingActivity"
             android:exported="false" />
         <activity
             android:name=".fragment.ProfileActivity"
