@@ -3,9 +3,10 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.distsDirectory
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.devtools.ksp")
     id("kotlin-parcelize")
 }
-
+var someVar = "19058add5ddd7262001b72e3c920ebf8"
 android {
 
     namespace = "com.example.myapplication"
@@ -19,6 +20,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "APP_ID", '"' + someVar + '"')
     }
 
     buildTypes {
@@ -31,20 +34,32 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
 }
 
 dependencies {
+    testImplementation(libs.junit.jupiter)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.work.runtime)
+    implementation(libs.android.async.http.v1410)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx.v261)
+    implementation(libs.androidx.lifecycle.livedata.ktx.v261)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
@@ -63,6 +78,8 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.core.ktx)
     testImplementation(libs.junit)
+    testImplementation("org.mockito:mockito-core:3.6.0")
+    testImplementation("org.mockito:mockito-inline:4.4.0")
     testImplementation(libs.mockito.core)
     testImplementation(libs.mockito.inline)
     testImplementation(libs.junit.jupiter)

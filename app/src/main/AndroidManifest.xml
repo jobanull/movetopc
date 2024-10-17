@@ -6,15 +6,12 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
 
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
-
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.READ_SMS" />
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -67,10 +64,47 @@
             android:name=".testing.TestingMainActivity"
             android:exported="false" />
         <activity
+            android:name=".ldp.room.RoomNoteAddUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.sqlite.NoteAddUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.sharedPreferences.FormUserPreferencesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.sqlite.SqlLiteMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.sharedPreferences.SharedPrefMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.room.RoomMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.repository.ui.RepositoryMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.openFile.OpenFileMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ldp.datastore.DataStoreMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".livedata.withapi.LiveDataApiMainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyApplication" />
+        <activity
+
             android:name=".viewModel.ViewModelMainActivity"
             android:exported="false" />
         <activity
             android:name=".loopj.LoopJListQuoteActivity"
+
+            android:exported="false" />
+        <activity
+            android:name=".task.TaskMainActivity"
+
             android:exported="false" />
         <activity
             android:name=".retrofit.RetrofitMainActivity"
@@ -85,7 +119,7 @@
             android:name=".livedata.LiveDataMainActivity"
             android:exported="false" />
         <activity
-            android:name=".ldp.LDPMainActivity"
+            android:name=".ldp.LdpMainActivity"
             android:exported="false" />
         <activity
             android:name=".navigation.NavigationProfileActivity"

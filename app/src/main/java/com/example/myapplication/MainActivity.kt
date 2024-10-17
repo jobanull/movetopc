@@ -6,7 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.fragment.FragmentMainActivity
-import com.example.myapplication.ldp.LDPMainActivity
+import com.example.myapplication.ldp.LdpMainActivity
 import com.example.myapplication.livedata.LiveDataMainActivity
 import com.example.myapplication.loopj.LoopJMainActivity
 import com.example.myapplication.navigation.NavigationMainActivity
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity(){
         }
 
         btnLdp.setOnClickListener {
-            val intent = Intent(this@MainActivity, LDPMainActivity::class.java)
+            val intent = Intent(this@MainActivity, LdpMainActivity::class.java)
             startActivity(intent)
         }
 
