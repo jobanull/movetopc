@@ -123,6 +123,4 @@ class AlarmReceiver : BroadcastReceiver() {
             Toast.makeText(context, "Repeating alarm dibatalkan", Toast.LENGTH_SHORT).show()
         }
     }
-
-
 }
